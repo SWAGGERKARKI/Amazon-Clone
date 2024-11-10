@@ -4,9 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amazon Clone</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/product.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
 </head>
 <body>
+  <div class="header">
+    <div class="left-section">
+      <img class="amazon-logo" src="icons/amazon-logo-white.png">
+    </div>
+    <div class="middle-section">
+      <input class="search-bar" type="text" placeholder="Search">
+      <button class="search-button">
+        <img class="search-icon" src="icons/search-icon.png">
+      </button>
+    </div>
+    <div class="right-section">
+      <a class="orders-link header-link" href="return-and-order.html">
+        <p class="returns-text">Returns</p>
+        <p class="orders-text">& Orders</p>
+      </a>
+
+      <a class="cart-link header-link" href="cart.html">
+        <img class="cart-icon" src="icons/cart-icon.png">
+        <div class="cart-items">3</div>
+        <div class="cart-text">Cart</div>
+      </a>
+
+    </div>
+  </div>
+
+
   <div class="product-grid">
     <div class="product-preview">
       <div class="product-image-container">
@@ -14,7 +45,7 @@
       </div>
 
       <div class="product-info">
-        <p class="product-title">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+        <p class="product-title limit-to-2-line">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
         <div class="product-rating-container">
           <img class="product-rating-image" src="rating-images/rating-45.png">
           <p class="product-rating-count">87</p>
@@ -80,12 +111,12 @@
       </div>
 
       <div class="product-info">
-        <div class="product-title">Black and Gray Athletic Cotton Socks - 6 Pairs</div>
+        <div class="product-title">Adults Plain Cotton T-Shirt - 2 Pack</div>
         <div class="product-rating-container">
           <img class="product-rating-image" src="rating-images/rating-45.png">
-          <p class="product-rating-count">87</p>
+          <p class="product-rating-count">56</p>
         </div>
-        <div class="product-price">$10.90</div>
+        <div class="product-price">$7.99</div>
     
         <div>
           <select name="product-quantity" id="product-quantity">
