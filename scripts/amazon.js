@@ -13,7 +13,7 @@ products.forEach((product) => {
           <img class="product-rating-image" src="rating-images/rating-${product.rating.stars * 10}.png">
           <p class="product-rating-count">${product.rating.count}</p>
         </div>
-        <div class="product-price">$${product.priceCents / 100}</div>
+        <div class="product-price">$${(product.priceCents / 100).toFixed(2)}</div>
     
         <div>
           <select name="product-quantity" id="product-quantity">
@@ -52,12 +52,23 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((addButton) => {
     });
 
     if (matchingItem) {
-      matchingItem.quantity += 1;
+      matchingItem.quantity++;
     } else {
       productInCart.push({
         productId: productId,
         quantity: 1
       });
     }
+
+    let cartQuantity = 0;
+
+    productInCart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    document.querySelector('.js-cart-items').innerHTML = cartQuantity;
+
+    console.log(cartQuantity);
+    console.log(productInCart);
   });
 });
