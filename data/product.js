@@ -70,21 +70,21 @@ const products = [{
 },
 {
   id: '9cca-a7f8-f0d8-b10f-0486-0f44',
-  image: 'images/intermediate-composite-basketball.jpg',
-  name: 'Intermediate Size Basketball',
+  image: 'images/earbuds.jpg',
+  name: 'Ultra Premium Earbuds in Nepal',
   rating: {
     stars: 4,
-    count: 127
+    count: 12
   },
-  priceCents: 2095
+  priceCents: 1033
 },
 {
   id: '9afd-d1d7-ed84-a6dc-117b-a7d4',
-  image: 'images/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-  name: 'Adults Plain Cotton T-Shirt - 2 Pack',
+  image: 'images/laptop.jpg',
+  name: 'Dell XPS 9340 2024, Intel Ultra 7',
   rating: {
     stars: 4.5,
-    count: 56
+    count: 51
   },
-  priceCents: 799
+  priceCents: 7999
 }];
