@@ -110,8 +110,21 @@
   padding: 4px;
   border-radius: 7px;
   border-color: rgb(186, 186, 186);
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.15);
+}
+
+.checkmark-icon {
+  width: 20px;
+  vertical-align: top;
+  display: inline-block;
+  opacity: 0;
+}
+
+.added-text {
+  display: inline-block;
+  color: rgb(12, 135, 12);
+  opacity: 0;
 }
 
 .add-to-cart-button {
@@ -125,5 +138,10 @@
   min-width: 100px;
   border-radius: 16px;
   border: none;
+  margin-top: 10px;
   cursor: pointer;
+}
+
+.add-opacity {
+  opacity: 1;
 }

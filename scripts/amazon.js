@@ -8,7 +8,7 @@ products.forEach((product) => {
       </div>
 
       <div class="product-info">
-        <div class="product-title">${product.name}</div>
+        <div class="product-title limit-to-2-line">${product.name}</div>
         <div class="product-rating-container">
           <img class="product-rating-image" src="rating-images/rating-${product.rating.stars * 10}.png">
           <p class="product-rating-count">${product.rating.count}</p>
@@ -28,6 +28,10 @@ products.forEach((product) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
+        </div>
+        <div>
+          <img class="js-checkmark-icon-${product.id} checkmark-icon" src="icons/checkmark.png">
+          <div class="added-text js-added-text-${product.id}">Added</div>
         </div>
         <div>
           <button class="add-to-cart-button js-add-to-cart-button" data-product-id="${product.id}">Add to Cart</button>
@@ -72,5 +76,19 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((addButton) => {
     });
 
     document.querySelector('.js-cart-items').innerHTML = cartQuantity;
+
+    const checkMarkElement = document.querySelector(`.js-checkmark-icon-${productId}`);
+    const addedTextElement = document.querySelector(`.js-added-text-${productId}`);
+    checkMarkElement.classList.add('add-opacity');
+    addedTextElement.classList.add('add-opacity');
+
+    let timeoutId;
+
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      checkMarkElement.classList.remove('add-opacity');
+      addedTextElement.classList.remove('add-opacity');
+    }, 2000);
   });
 });
