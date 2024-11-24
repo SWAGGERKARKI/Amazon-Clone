@@ -1,0 +1,75 @@
+body {
+  font-family: Roboto, Arial;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-product-container {
+  width: 700px;
+  padding: 26px 18px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 2px;
+}
+
+.delivery-date-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 26px;
+  color: rgb(0, 167, 0);
+}
+
+.cart-product {
+  display: flex;
+  gap: 26px;
+}
+
+.product-image {
+  height: 100px;
+}
+
+.product-title,
+.product-price,
+.delivery-option-title,
+.delivery-option-container {
+  margin-bottom: 8px;
+}
+
+.product-title,
+.delivery-option-title {
+  font-weight: bold;
+}
+
+.product-price {
+  font-weight: bold;
+  color: rgb(210, 53, 0);
+}
+
+.quantity-updation {
+  display: flex;
+  gap: 4px;
+}
+
+.delivery-option-container {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-option-button {
+  height: 20px;
+  width: 20px;
+}
+
+.delivery-option-date {
+  font-weight: bold;
+  color: rgb(0, 167, 0);
+  margin-bottom: 4px;
+}
+
+.delivery-shipping-fee {
+  font-size: 14px;
+  color: rgb(168, 168, 168);
+}
+
