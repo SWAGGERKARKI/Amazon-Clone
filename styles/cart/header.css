@@ -19,8 +19,12 @@
   align-items: center;
 }
 
+.left-section {
+  margin-left: 34px;
+}
+
 .amazon-logo {
-  width: 90px;
+  width: 100px;
 }
 
 .middle-section {
@@ -28,7 +32,17 @@
   text-align: center;
 }
 
+@media (max-width: 1000px) {
+  .middle-section .checkout-text {
+    font-size: 18px;
+  }
+}
+
 .checkout-text {
   font-size: 24px;
   font-weight: 700;
+}
+
+.right-section {
+  margin-right: 34px;
 }
