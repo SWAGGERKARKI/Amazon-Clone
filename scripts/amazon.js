@@ -73,6 +73,8 @@ function textAppearance(productId) {
   }, 2000);
 }
 
+updateCartQuantity();
+
 document.querySelectorAll('.js-add-to-cart-button').forEach((addButton) => {
   addButton.addEventListener('click', () => {
     // const productId = addButton.dataset.productId;
