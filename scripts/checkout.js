@@ -34,7 +34,7 @@ productInCart.forEach((cartItem) => {
           <div class="delivery-option-title">Choose a delivery option:</div>
           <div class="delivery-option-container">
             <div class="delivery-option-button-container">
-              <input class="delivery-option-button" type="radio" name="delivery-option">
+              <input class="delivery-option-button" type="radio" name="delivery-option-${matchingItem.id}">
             </div>
             <div>
               <div class="delivery-option-date">Tuesday, December 3</div>
@@ -44,7 +44,7 @@ productInCart.forEach((cartItem) => {
         
           <div class="delivery-option-container">
             <div>
-              <input class="delivery-option-button" type="radio" name="delivery-option">
+              <input class="delivery-option-button" type="radio" name="delivery-option-${matchingItem.id}">
             </div>
             <div>
               <div class="delivery-option-date">Wednesday, November 27</div>
@@ -54,7 +54,7 @@ productInCart.forEach((cartItem) => {
   
           <div class="delivery-option-container">
             <div>
-              <input class="delivery-option-button" type="radio" name="delivery-option">
+              <input class="delivery-option-button" type="radio" name="delivery-option-${matchingItem.id}">
             </div>
             <div>
               <div class="delivery-option-date">Monday, November 25</div>
