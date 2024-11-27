@@ -94,7 +94,18 @@ main {
 
 .quantity-updation {
   display: flex;
-  gap: 4px;
+  gap: 8px;
+}
+
+.update-link,
+.delete-link {
+  color: rgb(0, 167, 200);
+  cursor: pointer;
+}
+
+.update-link:hover,
+.delete-link:hover {
+  color: rgb(200, 10, 0);
 }
 
 .delivery-option-container {
