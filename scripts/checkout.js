@@ -1,4 +1,4 @@
-import {productInCart, removeFromCart} from '../data/cart.js';
+import {productInCart, removeFromCart, updateCartQuantity} from '../data/cart.js';
 import {products} from '../data/product.js';
 import {formatCurrency} from './utils/price.js';
 
@@ -24,8 +24,10 @@ productInCart.forEach((cartItem) => {
           <div class="product-title">${matchingItem.title}</div>
           <div class="product-price">$${formatCurrency(matchingItem.priceCents)}</div>
           <div class="quantity-updation">
-            <div>Quantity: ${cartItem.quantity}</div>
-            <div class="update-link">Update</div>
+            <div>Quantity: <span class="quantity js-quantity-${matchingItem.id}">${cartItem.quantity}<span></div>
+            <input class="quantity-input js-quantity-input-${matchingItem.id}" type="number">
+            <span class="quantity-save-link js-quantity-save-link" data-product-id="${matchingItem.id}">Save</span>
+            <div class="update-link js-update-link" data-product-id="${matchingItem.id}">Update</div>
             <div class="delete-link js-delete-link" data-product-id=${matchingItem.id}>Delete</div>
           </div>
         </div>
@@ -79,6 +81,20 @@ function updateCheckoutItems() {
   document.querySelector('.js-item-text').innerHTML = `${cartQuantity} items`;
 }
 
+function updateNewQuantity(productId) {
+  const newQuantity = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
+
+  const container = document.querySelector(`.js-cart-product-container-${productId}`);
+  container.classList.remove('is-editing-quantity');
+
+  updateCartQuantity(productId, newQuantity);
+  updateCheckoutItems();
+
+  if (newQuantity >= 0 && newQuantity < 100) {
+    document.querySelector(`.js-quantity-${productId}`).innerHTML = newQuantity;
+  }
+}
+
 updateCheckoutItems();
 
 document.querySelectorAll('.js-delete-link').forEach((deleteLink) => {
@@ -91,5 +107,29 @@ document.querySelectorAll('.js-delete-link').forEach((deleteLink) => {
     container.remove();
 
     updateCheckoutItems();
+  });
+});
+
+document.querySelectorAll('.js-update-link').forEach((updateLink) => {
+  updateLink.addEventListener('click', () => {
+    const productId = updateLink.dataset.productId;
+
+    const container = document.querySelector(`.js-cart-product-container-${productId}`);
+    container.classList.add('is-editing-quantity');
+
+    const inputElement = document.querySelector(`.js-quantity-input-${productId}`);
+    inputElement.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        updateNewQuantity(productId);
+      }
+    });
+  });
+});
+
+document.querySelectorAll('.js-quantity-save-link').forEach((saveLink) => {
+  saveLink.addEventListener('click', () => {
+    const productId = saveLink.dataset.productId;
+    
+    updateNewQuantity(productId);
   });
 });

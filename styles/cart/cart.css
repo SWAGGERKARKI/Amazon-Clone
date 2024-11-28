@@ -97,6 +97,17 @@ main {
   gap: 8px;
 }
 
+.quantity-input {
+  display: none;
+  width: 30px;
+}
+
+.quantity-save-link {
+  display: none;
+  color: rgb(0, 167, 200);
+  cursor: pointer;
+}
+
 .update-link,
 .delete-link {
   color: rgb(0, 167, 200);
@@ -104,8 +115,25 @@ main {
 }
 
 .update-link:hover,
-.delete-link:hover {
+.delete-link:hover,
+.quantity-save-link:hover {
   color: rgb(200, 10, 0);
+}
+
+.is-editing-quantity .quantity-input {
+  display: inherit;
+}
+
+.is-editing-quantity .quantity-save-link {
+  display: inherit;
+}
+
+.is-editing-quantity .update-link {
+  display: none;
+}
+
+.is-editing-quantity .quantity {
+  display: none;
 }
 
 .delivery-option-container {
@@ -203,4 +231,3 @@ main {
 .order-button:hover {
   background-color: rgb(255, 210, 0);
 }
-

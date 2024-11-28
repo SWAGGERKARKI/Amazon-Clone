@@ -53,3 +53,17 @@ export function removeFromCart(productId) {
 
   saveToStorage();
 }
+
+export function updateCartQuantity(productId, newQuantity) {
+  if (newQuantity >= 0 && newQuantity < 100) {
+    productInCart.forEach((cartItem) => {
+      if (productId === cartItem.productId) {
+        cartItem.quantity = newQuantity;
+      }
+    });
+  } else {
+    alert('Enter valid quantity');
+  }
+
+  saveToStorage();
+}
