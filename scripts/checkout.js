@@ -1,6 +1,7 @@
 import {productInCart, removeFromCart, updateCartQuantity} from '../data/cart.js';
 import {products} from '../data/product.js';
 import {formatCurrency} from './utils/price.js';
+import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.13/+esm';
 
 const date = dayjs();
 const deliveryDate = date.add(7, 'days');
