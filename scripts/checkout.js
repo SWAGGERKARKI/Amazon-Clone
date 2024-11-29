@@ -2,6 +2,10 @@ import {productInCart, removeFromCart, updateCartQuantity} from '../data/cart.js
 import {products} from '../data/product.js';
 import {formatCurrency} from './utils/price.js';
 
+const date = dayjs();
+const deliveryDate = date.add(7, 'days');
+console.log(deliveryDate.format('dddd, MMMM D'));
+
 let checkoutHTML = '';
 
 productInCart.forEach((cartItem) => {
