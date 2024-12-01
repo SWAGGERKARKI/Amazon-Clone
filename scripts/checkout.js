@@ -26,7 +26,7 @@ productInCart.forEach((cartItem) => {
         <img class="product-image" src="${matchingItem.image}">
   
         <div class="product-info">
-          <div class="product-title">${matchingItem.title}</div>
+          <div class="product-title">${matchingItem.name}</div>
           <div class="product-price">$${formatCurrency(matchingItem.priceCents)}</div>
           <div class="quantity-updation">
             <div>Quantity: <span class="quantity js-quantity-${matchingItem.id}">${cartItem.quantity}<span></div>
