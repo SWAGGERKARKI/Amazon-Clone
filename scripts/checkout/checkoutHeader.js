@@ -14,7 +14,6 @@ export function renderCheckoutHeader() {
       <img src="icons/checkout-lock-icon.png">
     </div>
   `;
-  console.log(html);
-
-  console.log(document.querySelector('.js-header-content').innerHTML = html);
+  
+  document.querySelector('.js-header-content').innerHTML = html;
 }
